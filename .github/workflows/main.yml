@@ -1,1 +1,17 @@
-# Contains workflow file main.yml (empty for now)
+# .github/workflows/main.yml
+name: Say Hello Workflow
+
+on:
+  push:
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Run echo command
+      - name: Say Hello
+        run: echo "Hello, world"
