@@ -8,7 +8,7 @@ on:
 
 jobs:
   issue_event_job:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     # Step 1: Checkout the repository
