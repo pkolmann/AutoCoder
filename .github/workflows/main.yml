@@ -28,12 +28,12 @@ jobs:
         run: ./scripts/script.sh $GITHUB_TOKEN $REPOSITORY $ISSUE_NUMBER $OPENAI_API_KEY
 
       - name: Upload Artefacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: autocoder-artifact
 
       - name: Download Artefacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: autocoder-artifact
 
