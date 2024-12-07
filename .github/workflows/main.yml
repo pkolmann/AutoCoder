@@ -5,6 +5,7 @@ on:
     types:
       - opened
       - reopened
+      - labeled
 
 jobs:
   issue_event_job:
@@ -31,7 +32,7 @@ jobs:
           echo "Issue Labels: $ISSUE_LABELS"
 
   autoCoder:
-    if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened') && contains(github.event.issue.labels.*.name, 'autocoder-bot')
+    if: contains(github.event.issue.labels.*.name, 'autocoder-bot')
     runs-on: ubuntu-latest
 
     steps:
