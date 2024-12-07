@@ -12,14 +12,10 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'autocoder-bot')
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      issues: write
+      contents: write
       pull-requests: write
 
     steps:
-      - name: Print token
-        run: echo ${{ secrets.GITHUB_TOKEN }}
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
