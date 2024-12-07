@@ -37,6 +37,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: autocoder-artifact
+          path: ./autocoder-artifact
 
       - name: List files recursively
         run: |
