@@ -23,7 +23,7 @@ jobs:
         run: chmod +x ./scripts/script.sh
 
       - name: Interact with GPT
-        run: echo ${{ self.full_repo_name }}
+        uses: "pkolmann/AutoCoder@v1"
 
       - name: Generate Code with ChatGPT
         env:
