@@ -1,0 +1,31 @@
+name: "Runs on opened and reopened issues"
+
+on:
+  issues:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  issue_event_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Set environment variables and log issue details
+    - name: Read and echo issue details
+      env:
+        ISSUE_NUMBER: ${{ github.event.issue.number }}
+        ISSUE_TITLE: ${{ github.event.issue.title }}
+        ISSUE_BODY: ${{ github.event.issue.body }}
+        ISSUE_ASSIGNEES: ${{ github.event.issue.assignees[*].login }}
+        ISSUE_LABELS: ${{ github.event.issue.labels[*].name }}
+      run: |
+        echo "Issue Number: $ISSUE_NUMBER"
+        echo "Issue Title: $ISSUE_TITLE"
+        echo "Issue Body: $ISSUE_BODY"
+        echo "Issue Assignees: $ISSUE_ASSIGNEES"
+        echo "Issue Labels: $ISSUE_LABELS"
