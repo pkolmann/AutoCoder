@@ -59,6 +59,7 @@ jobs:
           branch-suffix: timestamp
           labels: "autocoder-bot"
           author: "autocoder-bot <actions@github.com>"
+          delete-branch: true
 
   issue_event_job:
     if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened')
